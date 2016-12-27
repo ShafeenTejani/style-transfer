@@ -1,0 +1,5 @@
+*.pyc
+*.mat
+.DS_Store
+style_transfer_output*
+train_simple
