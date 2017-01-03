@@ -56,6 +56,8 @@ def build_parser():
     parser.add_argument('--initial',
             dest='initial', help='initial image',
             metavar='INITIAL')
+    parser.add_argument('--use-gpu', dest='use_gpu', help='run on a GPU', action='store_true')
+    parser.set_defaults(use_gpu=False)
     return parser
 
 
@@ -84,6 +86,8 @@ def main():
         parser.error("To save intermediate images, the checkpoint output "
                      "parameter must contain `%s` (e.g. `foo%s.jpg`)")
 
+    device = '/gpu:0' if options.use_gpu else '/cpu:0'
+
     style_transfer = StyleTransfer(
         vgg_path=VGG_PATH,
         content=content_image,
@@ -91,7 +95,8 @@ def main():
         content_weight=options.content_weight,
         style_weight=options.style_weight,
         tv_weight=options.style_weight,
-        initial=initial)
+        initial=initial,
+        device=device)
 
     for iteration, image, losses in style_transfer.train(
         learning_rate=options.learning_rate,

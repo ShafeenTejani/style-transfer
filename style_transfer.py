@@ -14,27 +14,29 @@ class StyleTransfer:
     def __init__(self, vgg_path, content,
                 style, content_weight,
                 style_weight, tv_weight,
-                initial=None):
-        self.vgg = vgg_network.VGG(vgg_path)
-        self.content = content
-        self.style = style
-        self.image = self._get_initial_image_or_random(initial)
+                initial,
+                device):
+        with tf.device(device):
+            self.vgg = vgg_network.VGG(vgg_path)
+            self.content = content
+            self.style = style
+            self.image = self._get_initial_image_or_random(initial)
 
-        loss_calculator = LossCalculator(self.vgg, self.image);
+            loss_calculator = LossCalculator(self.vgg, self.image);
 
-        self.content_loss = loss_calculator.content_loss(content,
-                                                         self.CONTENT_LAYER,
-                                                         content_weight)
+            self.content_loss = loss_calculator.content_loss(content,
+                                                             self.CONTENT_LAYER,
+                                                             content_weight)
 
-        self.style_loss = loss_calculator.style_loss(style,
-                                                     self.STYLE_LAYERS,
-                                                     style_weight)
+            self.style_loss = loss_calculator.style_loss(style,
+                                                         self.STYLE_LAYERS,
+                                                         style_weight)
 
-        self.total_variation_loss = loss_calculator.tv_loss(self.image,
-                                                            self.content.shape,
-                                                            tv_weight)
+            self.total_variation_loss = loss_calculator.tv_loss(self.image,
+                                                                self.content.shape,
+                                                                tv_weight)
 
-        self.loss = self.content_loss + self.style_loss + self.total_variation_loss
+            self.loss = self.content_loss + self.style_loss + self.total_variation_loss
 
 
     def _get_initial_image_or_random(self, initial):
