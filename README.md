@@ -17,7 +17,7 @@ The total loss used is the weighted sum of the style loss, the content loss and 
 
 ## Running the code
 
-```python style_transfer.py --content <content image> --style <style image> --output <output image path>```
+```python run.py --content <content image> --style <style image> --output <output image path>```
 
 The algorithm will run with the following settings:
 
