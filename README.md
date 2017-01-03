@@ -49,4 +49,4 @@ This code was inspired by an existing TensorFlow [implementation by Anish Athaly
 
 ## License
 
-Released under GPLv3.
+Released under GPLv3, see [LICENSE.txt](LICENSE.txt)
