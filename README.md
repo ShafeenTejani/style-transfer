@@ -29,14 +29,19 @@ STYLE_WEIGHT = 1e2   # override with --style-weight argument
 TV_WEIGHT = 1e2      # override with --tv-weight argument
 ```
 
-By default the algorithm will start with random noise image and optimise it to produce a style transferred image. To start with a particular image (for example the content image) run with the `--initial <initial image>` argument
+By default the style transfer will start with a random noise image and optimise it to generate an output image. To start with a particular image (for example the content image) run with the `--initial <initial image>` argument.
     
-
+To run the style transfer with a GPU run with the `--use-gpu` flag.
 
 ## Results
 
+I generated style transfers using the following three style images:
 
+![Style Images](results/style_images.png)
 
+Each style transfer was run for 1000 iterations on a GTX 1080 GPU and took approximately 1 minute. Here are some of the style transfers I was able to generate:
+
+![Results](results/style_transfers.png)
 
 ## Acknowledgements
 
