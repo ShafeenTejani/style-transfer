@@ -23,7 +23,7 @@ The algorithm will run with the following settings:
 
 ```python 
 ITERATIONS = 1000    # override with --iterations argument
-LEARNING_RATE = 1e1  # override with  --learning-rate argument
+LEARNING_RATE = 1e1  # override with --learning-rate argument
 CONTENT_WEIGHT = 5e1 # override with --content-weight argument
 STYLE_WEIGHT = 1e2   # override with --style-weight argument
 TV_WEIGHT = 1e2      # override with --tv-weight argument
