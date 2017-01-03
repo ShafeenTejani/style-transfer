@@ -45,7 +45,7 @@ Each style transfer was run for 1000 iterations on a GTX 1080 GPU and took appro
 
 ## Acknowledgements
 
-This code was inspired by an existing TensorFlow [implementation by Anish Athalye](https://github.com/anishathalye/neural-style), and I have re-used his VGG network code here.
+This code was inspired by an existing TensorFlow [implementation by Anish Athalye](https://github.com/anishathalye/neural-style), and I have re-used most of his VGG network code here.
 
 ## License
 
