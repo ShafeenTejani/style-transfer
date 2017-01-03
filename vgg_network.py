@@ -1,3 +1,5 @@
+# Copyright (c) 2016-2017 Shafeen Tejani. Released under GPLv3.
+
 import tensorflow as tf
 import numpy as np
 import scipy.io
