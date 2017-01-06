@@ -39,7 +39,7 @@ I generated style transfers using the following three style images:
 
 ![Style Images](results/style_images.png)
 
-Each style transfer was run for 1000 iterations on a CPU and took approximately 1 hour. Here are some of the style transfers I was able to generate:
+Each style transfer was run for 1000 iterations on a CPU and took approximately 2 hours. Here are some of the style transfers I was able to generate:
 
 ![Results](results/style_transfers.png)
 
