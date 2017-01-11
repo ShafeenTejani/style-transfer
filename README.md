@@ -4,7 +4,7 @@ A TensorFlow implementation of style transfer based on the paper [A Neural Algor
 
 ## Algorithm
 
-See my related blog post(link) for an overview of the style transfer algorithm.
+See my related [blog post](https://shafeentejani.github.io/2016-12-27/style-transfer/) for an overview of the style transfer algorithm.
 
 The total loss used is the weighted sum of the style loss, the content loss and a total variation loss. This third component is not specfically mentioned in the original paper but leads to more cohesive images being generated.
 
